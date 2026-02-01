@@ -12,7 +12,4 @@ COPY . .
 # Build the app
 RUN npm run build
 
-# Clean up dev dependencies after build
-RUN npm prune --omit=dev
-
 CMD ["npm", "run", "start"]
