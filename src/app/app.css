@@ -1,0 +1,16 @@
+/* Navigation Link Styles */
+.nav-link {
+  text-decoration: none;
+  padding: 2px 0;
+  border-bottom: 2px solid transparent;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-link.nav-active {
+  border-bottom-color: #B11823;
+}
+
+/* Content Section Lazy Load - GSAP handles animation */
+.fade-in-section {
+  /* GSAP will animate from these initial values */
+}

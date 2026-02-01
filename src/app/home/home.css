@@ -1,0 +1,181 @@
+/* Phone Container */
+.phone-container {
+  position: relative;
+  display: inline-block;
+}
+
+.phone-body {
+  width: 150px;
+  height: auto;
+  max-width: 90vw;
+}
+
+@media (min-width: 640px) {
+  .phone-body {
+    width: 200px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .phone-body {
+    width: 250px;
+  }
+}
+
+/* Phone Handset Positioning and Animation */
+.phone-handset {
+  top: 25px;
+  left: 18px;
+  width: 33px;
+  height: auto;
+  transform-origin: 50% 10%;
+  animation: handsetRing 3s ease-in-out infinite;
+}
+
+@media (min-width: 640px) {
+  .phone-handset {
+    top: 35px;
+    left: 24px;
+    width: 44px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .phone-handset {
+    top: 45px;
+    left: 30px;
+    width: 55px;
+  }
+}
+
+@keyframes handsetRing {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  5% {
+    transform: translateX(-2px) rotate(-1deg);
+  }
+  10% {
+    transform: translateX(2px) rotate(1deg);
+  }
+  15% {
+    transform: translateX(-2px) rotate(-1deg);
+  }
+  20% {
+    transform: translateX(2px) rotate(1deg);
+  }
+  25% {
+    transform: translateX(-1px) rotate(-0.5deg);
+  }
+  30% {
+    transform: translateX(1px) rotate(0.5deg);
+  }
+  35% {
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+/* Ring Text Elements */
+.ring-text {
+  position: absolute;
+  color: white;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 500;
+  font-family: 'Chase Bold', sans-serif;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.ring-text.ring-active {
+  animation: ringPop 1s ease-in-out forwards;
+}
+
+@keyframes ringPop {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8) rotate(var(--ring-rotation));
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(var(--ring-rotation));
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(-5px) scale(1) rotate(var(--ring-rotation));
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.8) rotate(var(--ring-rotation));
+  }
+}
+
+/* Left side rings */
+.ring-left-1 {
+  top: 20%;
+  left: -80px;
+  --ring-rotation: -10deg;
+  transform: rotate(-10deg);
+}
+
+.ring-left-2 {
+  top: 45%;
+  left: -80px;
+  --ring-rotation: -10deg;
+  transform: rotate(-10deg);
+}
+
+.ring-left-3 {
+  top: 70%;
+  left: -80px;
+  --ring-rotation: -10deg;
+  transform: rotate(-10deg);
+}
+
+/* Right side rings */
+.ring-right-1 {
+  top: 20%;
+  right: -80px;
+  --ring-rotation: 10deg;
+  transform: rotate(10deg);
+}
+
+.ring-right-2 {
+  top: 45%;
+  right: -80px;
+  --ring-rotation: 10deg;
+  transform: rotate(10deg);
+}
+
+.ring-right-3 {
+  top: 70%;
+  right: -80px;
+  --ring-rotation: 10deg;
+  transform: rotate(10deg);
+}
+
+@media (max-width: 640px) {
+  .ring-text {
+    font-size: 18px;
+  }
+
+  .ring-left-1, .ring-left-2, .ring-left-3 {
+    left: -60px;
+  }
+
+  .ring-right-1, .ring-right-2, .ring-right-3 {
+    right: -60px;
+  }
+}
+
+/* Walk Map Hover Effect */
+.walk-map {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  will-change: transform;
+}

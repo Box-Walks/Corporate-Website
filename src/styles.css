@@ -1,0 +1,15 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-brand-bg: #121317;
+  --font-family-chase: 'Chase Bold', sans-serif;
+}
+
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: 'Chase Bold';
+  src: url('/assets/font/ChaseBold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}

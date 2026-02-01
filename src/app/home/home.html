@@ -1,0 +1,556 @@
+<!-- Main Content -->
+<main class="min-h-screen bg-[#121317] flex flex-col items-center relative overflow-hidden pt-36 md:pt-24 md:pt-8 px-8">
+  <!-- Phone Animation Container -->
+  <div class="phone-container relative mb-16">
+    <!-- Phone Body (Stationary) -->
+    <img
+      src="/assets/img/phone_body.png"
+      alt="Phone Body"
+      class="phone-body relative z-10"
+    />
+
+    <!-- Phone Handset (Animated) -->
+    <img
+      src="/assets/img/phone_handset.png"
+      alt="Phone Handset"
+      class="phone-handset absolute z-20"
+    />
+
+    <!-- Ring Text Elements -->
+    <span class="ring-text ring-left-1" [class.ring-active]="activeRing() === 'left-1'">Ring</span>
+    <span class="ring-text ring-left-2" [class.ring-active]="activeRing() === 'left-2'">Ring</span>
+    <span class="ring-text ring-left-3" [class.ring-active]="activeRing() === 'left-3'">Ring</span>
+    <span class="ring-text ring-right-1" [class.ring-active]="activeRing() === 'right-1'">Ring</span>
+    <span class="ring-text ring-right-2" [class.ring-active]="activeRing() === 'right-2'">Ring</span>
+    <span class="ring-text ring-right-3" [class.ring-active]="activeRing() === 'right-3'">Ring</span>
+  </div>
+
+  <!-- Content Section -->
+  <section class="max-w-6xl text-white">
+    <div class="fade-in-section">
+      <h2 class="text-3xl font-normal mb-6" style="font-family: 'Chase Regular', sans-serif;">
+        Are You Ready To Get Dialled In?
+      </h2>
+
+      <p class="text-base mb-8 leading-relaxed" style="font-family: 'Noto Sans', sans-serif; font-weight: 300;">
+        Explore Richmond on foot, learn about all the amazing places to visit and how to better protect our natural
+        world. We provide guided walks through the borough using our grade II listed phone boxes as destination
+        points, which unlock gamified content. Walk, play and supercharge your environmental efforts.
+      </p>
+
+      <p class="text-base mb-8" style="font-family: 'Noto Sans', sans-serif; font-weight: 300;">
+        Give your walks some purpose!
+      </p>
+    </div>
+
+    <div class="fade-in-section">
+      <h3 class="text-xl font-normal mb-4" style="font-family: 'Chase Regular', sans-serif;">
+        Why take part?
+      </h3>
+
+      <ul class="space-y-3 mb-16 text-base" style="font-family: 'Noto Sans', sans-serif; font-weight: 300;">
+        <li class="flex items-start">
+          <span class="mr-3">•</span>
+          <span>Guided walks showing you the best of the borough</span>
+        </li>
+        <li class="flex items-start">
+          <span class="mr-3">•</span>
+          <span>Games and quizzes to play for all ages, including some GEO cache locations</span>
+        </li>
+        <li class="flex items-start">
+          <span class="mr-3">•</span>
+          <span>Information and resources which increase your environmental knowledge</span>
+        </li>
+        <li class="flex items-start">
+          <span class="mr-3">•</span>
+          <span>Special access to local artists' work which represents each phone box's theme</span>
+        </li>
+        <li class="flex items-start">
+          <span class="mr-3">•</span>
+          <span>Be part of a walking community and keep fit while making friends</span>
+        </li>
+        <li class="flex items-start">
+          <span class="mr-3">•</span>
+          <span>Earn activity badges and compete with everyone on the network.</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="fade-in-section">
+      <h2 class="text-3xl font-normal mb-6 text-right" style="font-family: 'Chase Regular', sans-serif;">
+        Let's Get Connected!
+      </h2>
+
+      <p class="text-base text-right mb-6" style="font-family: 'Noto Sans', sans-serif; font-weight: 300;">
+        Our walks will be launching in June 2026. Stay in touch on social media for more information after we have launched.
+      </p>
+
+      <!-- Social Media Icons -->
+      <div class="flex justify-end gap-4">
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/people/Box-Walks/61585998166120/" target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-center w-12 h-12 rounded-lg hover:opacity-80 transition-opacity"
+           style="background-color: #B11823;"
+           aria-label="Follow us on Facebook">
+          <svg class="w-6 h-6" fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/box.walks/" target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-center w-12 h-12 rounded-lg hover:opacity-80 transition-opacity"
+           style="background-color: #B11823;"
+           aria-label="Follow us on Instagram">
+          <svg class="w-6 h-6" fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/company/box-walks/" target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-center w-12 h-12 rounded-lg hover:opacity-80 transition-opacity"
+           style="background-color: #B11823;"
+           aria-label="Follow us on LinkedIn">
+          <svg class="w-6 h-6" fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </a>
+
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/@boxwalks" target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-center w-12 h-12 rounded-lg hover:opacity-80 transition-opacity"
+           style="background-color: #B11823;"
+           aria-label="Follow us on TikTok">
+          <svg class="w-6 h-6" fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V9.04a8.16 8.16 0 0 0 4.77 1.52V7.11a4.85 4.85 0 0 1-1.01-.42z"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Available Walks Section -->
+    <div class="mt-32">
+      <div class="fade-in-section">
+        <h2 class="text-4xl font-normal mb-4 text-center" style="font-family: 'Chase Regular', sans-serif;">
+          Explore Our Walks
+        </h2>
+        <p class="text-base text-center mb-16" style="font-family: 'Noto Sans', sans-serif; font-weight: 300;">
+          We have 5 routes and 8 walks on the network
+        </p>
+      </div>
+
+      <!-- Walk 1: Cara's Sustainability walk (Image Left, Text Right) -->
+      <div class="fade-in-section flex flex-col md:flex-row gap-8 mb-24 items-center">
+        <div class="md:w-1/2 relative">
+          <img
+            src="/assets/img/maps/Cara.png"
+            alt="Cara's Sustainability walk map"
+            class="walk-map rounded-2xl shadow-[0_20px_60px_rgba(177,24,35,0.4)]"
+          />
+          <!-- Overlay Badges - Left Aligned -->
+          <div class="absolute bottom-4 left-4 flex gap-3">
+            <div class="flex flex-col items-center justify-center w-20 h-20 rounded-xl" style="background-color: #B11823; font-family: 'Noto Sans', sans-serif;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V12C11 12.2652 11.1054 12.5196 11.2929 12.7071L14.2929 15.7071C14.6834 16.0976 15.3166 16.0976 15.7071 15.7071C16.0976 15.3166 16.0976 14.6834 15.7071 14.2929L13 11.5858V7Z" fill="#F7F9FC"/>
+              </svg>
+              <span class="text-[10px] font-medium mt-1">TIME</span>
+              <span class="text-xs font-bold">1h 15m</span>
+            </div>
+            <div class="flex flex-col items-center justify-center w-20 h-20 rounded-xl" style="background-color: #B11823; font-family: 'Noto Sans', sans-serif;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M9 5C9 6.65685 7.65685 8 6 8C4.34315 8 3 6.65685 3 5C3 3.34315 4.34315 2 6 2C7.65685 2 9 3.34315 9 5ZM10 5C10 4.44772 10.4477 4 11 4H15.5C17.9853 4 20 6.01472 20 8.5C20 10.9853 17.9853 13 15.5 13H8.5C7.11929 13 6 14.1193 6 15.5C6 16.8807 7.11929 18 8.5 18H13C13.5523 18 14 18.4477 14 19C14 19.5523 13.5523 20 13 20H8.5C6.01472 20 4 17.9853 4 15.5C4 13.0147 6.01472 11 8.5 11H15.5C16.8807 11 18 9.88071 18 8.5C18 7.11929 16.8807 6 15.5 6H11C10.4477 6 10 5.55228 10 5ZM18 22C19.6569 22 21 20.6569 21 19C21 17.3431 19.6569 16 18 16C16.3431 16 15 17.3431 15 19C15 20.6569 16.3431 22 18 22Z" fill="#F7F9FC"/>
+              </svg>
+              <span class="text-[10px] font-medium mt-1">DISTANCE</span>
+              <span class="text-xs font-bold">4.57km</span>
+            </div>
+            <div class="flex flex-col items-center justify-center w-20 h-20 rounded-xl" style="background-color: #B11823; font-family: 'Noto Sans', sans-serif;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.3623 3.53679C13.8464 3.62944 14.5533 3.87105 14.8944 4.55322C15.6414 6.04733 15.0248 7.46721 14.3624 8.3504C13.9304 8.92648 13.374 9.46853 12.7268 9.80043C12.5916 9.86978 12.3162 10.0005 11.9999 10.0005C11.4087 10.0004 10.8298 9.73147 10.3552 9.39565C10.2652 9.70153 10.1785 10.0376 10.1035 10.3939C9.96183 11.067 9.86895 11.7791 9.86389 12.4717C10.9163 12.1314 11.9928 12.1675 12.9214 12.6919C13.5558 12.185 14.3796 11.7535 15.2776 11.5181C16.5789 11.177 18.1385 11.2242 19.5546 12.1683C20.5704 12.8454 21.339 14.1209 21.4939 15.515C21.6555 16.9692 21.1512 18.56 19.6247 19.7812C18.5464 20.6438 16.9025 20.9764 15.3905 21.0977C13.8257 21.2232 12.1728 21.1369 10.8895 20.9943C8.51201 20.7301 6.6865 20.0666 5.41063 19.3814C4.57281 18.9314 3.42836 18.31 3.06534 17.3561C2.81963 16.7105 2.88378 15.9273 2.94403 15.2549C3.02305 14.373 3.21968 13.273 3.58656 12.0812C4.31865 9.70291 5.75154 6.88781 8.36288 4.72957C9.16636 4.06551 10.5103 3.65376 11.6348 3.51569C12.2154 3.44441 12.8258 3.4341 13.3623 3.53679Z" fill="#F7F9FC"/>
+              </svg>
+              <span class="text-[10px] font-medium mt-1">EFFORT</span>
+              <span class="text-xs font-bold">Easy</span>
+            </div>
+          </div>
+        </div>
+        <div class="md:w-1/2">
+          <h3 class="text-2xl font-normal mb-4" style="font-family: 'Chase Regular', sans-serif;">
+            Cara's Sustainability Walk
+          </h3>
+          <p class="text-base mb-2" style="font-family: 'Noto Sans', sans-serif; font-weight: 300;">
+            <strong>Area:</strong> Richmond to Twickenham
+          </p>
+          <p class="text-base mb-2" style="font-family: 'Noto Sans', sans-serif; font-weight: 300;">
+            <strong>Boxes:</strong> Bertie, Ted, Ralph and Cara
+          </p>
+          <p class="text-base mb-2" style="font-family: 'Noto Sans', sans-serif; font-weight: 300;">
+            <strong>Themes:</strong> Biodiversity, climate hope, resource circularity and climate change
+          </p>
+        </div>
+      </div>
+
+      <!-- Walk 2: Ted's Biodiversity walk (Image Right, Text Left) -->
+      <div class="fade-in-section flex flex-col md:flex-row-reverse gap-8 mb-24 items-center">
+        <div class="md:w-1/2 relative">
+          <img
+            src="/assets/img/maps/Ted.png"
+            alt="Ted's Biodiversity walk map"
+            class="walk-map rounded-2xl shadow-[0_20px_60px_rgba(177,24,35,0.4)]"
+          />
+          <!-- Overlay Badges - Right Aligned -->
+          <div class="absolute bottom-4 right-4 flex gap-3">
+            <div class="flex flex-col items-center justify-center w-20 h-20 rounded-xl" style="background-color: #B11823; font-family: 'Noto Sans', sans-serif;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V12C11 12.2652 11.1054 12.5196 11.2929 12.7071L14.2929 15.7071C14.6834 16.0976 15.3166 16.0976 15.7071 15.7071C16.0976 15.3166 16.0976 14.6834 15.7071 14.2929L13 11.5858V7Z" fill="#F7F9FC"/>
+              </svg>
+              <span class="text-[10px] font-medium mt-1">TIME</span>
+              <span class="text-xs font-bold">50min</span>
+            </div>
+            <div class="flex flex-col items-center justify-center w-20 h-20 rounded-xl" style="background-color: #B11823; font-family: 'Noto Sans', sans-serif;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M9 5C9 6.65685 7.65685 8 6 8C4.34315 8 3 6.65685 3 5C3 3.34315 4.34315 2 6 2C7.65685 2 9 3.34315 9 5ZM10 5C10 4.44772 10.4477 4 11 4H15.5C17.9853 4 20 6.01472 20 8.5C20 10.9853 17.9853 13 15.5 13H8.5C7.11929 13 6 14.1193 6 15.5C6 16.8807 7.11929 18 8.5 18H13C13.5523 18 14 18.4477 14 19C14 19.5523 13.5523 20 13 20H8.5C6.01472 20 4 17.9853 4 15.5C4 13.0147 6.01472 11 8.5 11H15.5C16.8807 11 18 9.88071 18 8.5C18 7.11929 16.8807 6 15.5 6H11C10.4477 6 10 5.55228 10 5ZM18 22C19.6569 22 21 20.6569 21 19C21 17.3431 19.6569 16 18 16C16.3431 16 15 17.3431 15 19C15 20.6569 16.3431 22 18 22Z" fill="#F7F9FC"/>
+              </svg>
+              <span class="text-[10px] font-medium mt-1">DISTANCE</span>
+              <span class="text-xs font-bold">3.10km</span>
+            </div>
+            <div class="flex flex-col items-center justify-center w-20 h-20 rounded-xl" style="background-color: #B11823; font-family: 'Noto Sans', sans-serif;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.3623 3.53679C13.8464 3.62944 14.5533 3.87105 14.8944 4.55322C15.6414 6.04733 15.0248 7.46721 14.3624 8.3504C13.9304 8.92648 13.374 9.46853 12.7268 9.80043C12.5916 9.86978 12.3162 10.0005 11.9999 10.0005C11.4087 10.0004 10.8298 9.73147 10.3552 9.39565C10.2652 9.70153 10.1785 10.0376 10.1035 10.3939C9.96183 11.067 9.86895 11.7791 9.86389 12.4717C10.9163 12.1314 11.9928 12.1675 12.9214 12.6919C13.5558 12.185 14.3796 11.7535 15.2776 11.5181C16.5789 11.177 18.1385 11.2242 19.5546 12.1683C20.5704 12.8454 21.339 14.1209 21.4939 15.515C21.6555 16.9692 21.1512 18.56 19.6247 19.7812C18.5464 20.6438 16.9025 20.9764 15.3905 21.0977C13.8257 21.2232 12.1728 21.1369 10.8895 20.9943C8.51201 20.7301 6.6865 20.0666 5.41063 19.3814C4.57281 18.9314 3.42836 18.31 3.06534 17.3561C2.81963 16.7105 2.88378 15.9273 2.94403 15.2549C3.02305 14.373 3.21968 13.273 3.58656 12.0812C4.31865 9.70291 5.75154 6.88781 8.36288 4.72957C9.16636 4.06551 10.5103 3.65376 11.6348 3.51569C12.2154 3.44441 12.8258 3.4341 13.3623 3.53679Z" fill="#F7F9FC"/>
+              </svg>
+              <span class="text-[10px] font-medium mt-1">EFFORT</span>
+              <span class="text-xs font-bold">Easy</span>
+            </div>
+          </div>
+        </div>
+        <div class="md:w-1/2">
+          <h3 class="text-2xl font-normal mb-4" style="font-family: 'Chase Regular', sans-serif;">
+            Ted's Biodiversity Walk
+          </h3>
+          <p class="text-base mb-2" style="font-family: 'Noto Sans', sans-serif; font-weight: 300;">
+            <strong>Area:</strong> Richmond
+          </p>
+          <p class="text-base mb-2" style="font-family: 'Noto Sans', sans-serif; font-weight: 300;">
+            <strong>Boxes:</strong> Bertie, Freddy, Tilly and Ted
+          </p>
+          <p class="text-base mb-2" style="font-family: 'Noto Sans', sans-serif; font-weight: 300;">
+            <strong>Themes:</strong> Biodiversity, climate hope, fungi and trees
+          </p>
+        </div>
+      </div>
+
+      <!-- Walk 3: Freddy's Big Biodiversity walk (Image Left, Text Right) -->
+      <div class="fade-in-section flex flex-col md:flex-row gap-8 mb-24 items-center">
+        <div class="md:w-1/2 relative">
+          <img
+            src="/assets/img/maps/Freddie.png"
+            alt="Freddy's Big Biodiversity walk map"
+            class="walk-map rounded-2xl shadow-[0_20px_60px_rgba(177,24,35,0.4)]"
+          />
+          <!-- Overlay Badges - Left Aligned -->
+          <div class="absolute bottom-4 left-4 flex gap-3">
+            <div class="flex flex-col items-center justify-center w-20 h-20 rounded-xl" style="background-color: #B11823; font-family: 'Noto Sans', sans-serif;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V12C11 12.2652 11.1054 12.5196 11.2929 12.7071L14.2929 15.7071C14.6834 16.0976 15.3166 16.0976 15.7071 15.7071C16.0976 15.3166 16.0976 14.6834 15.7071 14.2929L13 11.5858V7Z" fill="#F7F9FC"/>
+              </svg>
+              <span class="text-[10px] font-medium mt-1">TIME</span>
+              <span class="text-xs font-bold">2h 20m</span>
+            </div>
+            <div class="flex flex-col items-center justify-center w-20 h-20 rounded-xl" style="background-color: #B11823; font-family: 'Noto Sans', sans-serif;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M9 5C9 6.65685 7.65685 8 6 8C4.34315 8 3 6.65685 3 5C3 3.34315 4.34315 2 6 2C7.65685 2 9 3.34315 9 5ZM10 5C10 4.44772 10.4477 4 11 4H15.5C17.9853 4 20 6.01472 20 8.5C20 10.9853 17.9853 13 15.5 13H8.5C7.11929 13 6 14.1193 6 15.5C6 16.8807 7.11929 18 8.5 18H13C13.5523 18 14 18.4477 14 19C14 19.5523 13.5523 20 13 20H8.5C6.01472 20 4 17.9853 4 15.5C4 13.0147 6.01472 11 8.5 11H15.5C16.8807 11 18 9.88071 18 8.5C18 7.11929 16.8807 6 15.5 6H11C10.4477 6 10 5.55228 10 5ZM18 22C19.6569 22 21 20.6569 21 19C21 17.3431 19.6569 16 18 16C16.3431 16 15 17.3431 15 19C15 20.6569 16.3431 22 18 22Z" fill="#F7F9FC"/>
+              </svg>
+              <span class="text-[10px] font-medium mt-1">DISTANCE</span>
+              <span class="text-xs font-bold">8.99km</span>
+            </div>
+            <div class="flex flex-col items-center justify-center w-20 h-20 rounded-xl" style="background-color: #B11823; font-family: 'Noto Sans', sans-serif;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.3623 3.53679C13.8464 3.62944 14.5533 3.87105 14.8944 4.55322C15.6414 6.04733 15.0248 7.46721 14.3624 8.3504C13.9304 8.92648 13.374 9.46853 12.7268 9.80043C12.5916 9.86978 12.3162 10.0005 11.9999 10.0005C11.4087 10.0004 10.8298 9.73147 10.3552 9.39565C10.2652 9.70153 10.1785 10.0376 10.1035 10.3939C9.96183 11.067 9.86895 11.7791 9.86389 12.4717C10.9163 12.1314 11.9928 12.1675 12.9214 12.6919C13.5558 12.185 14.3796 11.7535 15.2776 11.5181C16.5789 11.177 18.1385 11.2242 19.5546 12.1683C20.5704 12.8454 21.339 14.1209 21.4939 15.515C21.6555 16.9692 21.1512 18.56 19.6247 19.7812C18.5464 20.6438 16.9025 20.9764 15.3905 21.0977C13.8257 21.2232 12.1728 21.1369 10.8895 20.9943C8.51201 20.7301 6.6865 20.0666 5.41063 19.3814C4.57281 18.9314 3.42836 18.31 3.06534 17.3561C2.81963 16.7105 2.88378 15.9273 2.94403 15.2549C3.02305 14.373 3.21968 13.273 3.58656 12.0812C4.31865 9.70291 5.75154 6.88781 8.36288 4.72957C9.16636 4.06551 10.5103 3.65376 11.6348 3.51569C12.2154 3.44441 12.8258 3.4341 13.3623 3.53679Z" fill="#F7F9FC"/>
+              </svg>
+              <span class="text-[10px] font-medium mt-1">EFFORT</span>
+              <span class="text-xs font-bold">Moderate</span>
+            </div>
+          </div>
+        </div>
+        <div class="md:w-1/2">
+          <h3 class="text-2xl font-normal mb-4" style="font-family: 'Chase Regular', sans-serif;">
+            Freddy's Big Biodiversity Walk
+          </h3>
+          <p class="text-base mb-2" style="font-family: 'Noto Sans', sans-serif; font-weight: 300;">
+            <strong>Area:</strong> Richmond to Barnes via Richmond Park
+          </p>
+          <p class="text-base mb-2" style="font-family: 'Noto Sans', sans-serif; font-weight: 300;">
+            <strong>Boxes:</strong> Bertie, Ted, Freddy, Tilly and Wendy
+          </p>
+          <p class="text-base mb-2" style="font-family: 'Noto Sans', sans-serif; font-weight: 300;">
+            <strong>Themes:</strong> Biodiversity, climate hope, fungi, trees and wetlands
+          </p>
+        </div>
+      </div>
+
+      <!-- Walk 4: Walter's Water walk (Image Right, Text Left) -->
+      <div class="fade-in-section flex flex-col md:flex-row-reverse gap-8 mb-24 items-center">
+        <div class="md:w-1/2 relative">
+          <img
+            src="/assets/img/maps/Walter.png"
+            alt="Walter's Water walk map"
+            class="walk-map rounded-2xl shadow-[0_20px_60px_rgba(177,24,35,0.4)]"
+          />
+          <!-- Overlay Badges - Right Aligned -->
+          <div class="absolute bottom-4 right-4 flex gap-3">
+            <div class="flex flex-col items-center justify-center w-20 h-20 rounded-xl" style="background-color: #B11823; font-family: 'Noto Sans', sans-serif;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V12C11 12.2652 11.1054 12.5196 11.2929 12.7071L14.2929 15.7071C14.6834 16.0976 15.3166 16.0976 15.7071 15.7071C16.0976 15.3166 16.0976 14.6834 15.7071 14.2929L13 11.5858V7Z" fill="#F7F9FC"/>
+              </svg>
+              <span class="text-[10px] font-medium mt-1">TIME</span>
+              <span class="text-xs font-bold">1h 25m</span>
+            </div>
+            <div class="flex flex-col items-center justify-center w-20 h-20 rounded-xl" style="background-color: #B11823; font-family: 'Noto Sans', sans-serif;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M9 5C9 6.65685 7.65685 8 6 8C4.34315 8 3 6.65685 3 5C3 3.34315 4.34315 2 6 2C7.65685 2 9 3.34315 9 5ZM10 5C10 4.44772 10.4477 4 11 4H15.5C17.9853 4 20 6.01472 20 8.5C20 10.9853 17.9853 13 15.5 13H8.5C7.11929 13 6 14.1193 6 15.5C6 16.8807 7.11929 18 8.5 18H13C13.5523 18 14 18.4477 14 19C14 19.5523 13.5523 20 13 20H8.5C6.01472 20 4 17.9853 4 15.5C4 13.0147 6.01472 11 8.5 11H15.5C16.8807 11 18 9.88071 18 8.5C18 7.11929 16.8807 6 15.5 6H11C10.4477 6 10 5.55228 10 5ZM18 22C19.6569 22 21 20.6569 21 19C21 17.3431 19.6569 16 18 16C16.3431 16 15 17.3431 15 19C15 20.6569 16.3431 22 18 22Z" fill="#F7F9FC"/>
+              </svg>
+              <span class="text-[10px] font-medium mt-1">DISTANCE</span>
+              <span class="text-xs font-bold">5.45km</span>
+            </div>
+            <div class="flex flex-col items-center justify-center w-20 h-20 rounded-xl" style="background-color: #B11823; font-family: 'Noto Sans', sans-serif;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.3623 3.53679C13.8464 3.62944 14.5533 3.87105 14.8944 4.55322C15.6414 6.04733 15.0248 7.46721 14.3624 8.3504C13.9304 8.92648 13.374 9.46853 12.7268 9.80043C12.5916 9.86978 12.3162 10.0005 11.9999 10.0005C11.4087 10.0004 10.8298 9.73147 10.3552 9.39565C10.2652 9.70153 10.1785 10.0376 10.1035 10.3939C9.96183 11.067 9.86895 11.7791 9.86389 12.4717C10.9163 12.1314 11.9928 12.1675 12.9214 12.6919C13.5558 12.185 14.3796 11.7535 15.2776 11.5181C16.5789 11.177 18.1385 11.2242 19.5546 12.1683C20.5704 12.8454 21.339 14.1209 21.4939 15.515C21.6555 16.9692 21.1512 18.56 19.6247 19.7812C18.5464 20.6438 16.9025 20.9764 15.3905 21.0977C13.8257 21.2232 12.1728 21.1369 10.8895 20.9943C8.51201 20.7301 6.6865 20.0666 5.41063 19.3814C4.57281 18.9314 3.42836 18.31 3.06534 17.3561C2.81963 16.7105 2.88378 15.9273 2.94403 15.2549C3.02305 14.373 3.21968 13.273 3.58656 12.0812C4.31865 9.70291 5.75154 6.88781 8.36288 4.72957C9.16636 4.06551 10.5103 3.65376 11.6348 3.51569C12.2154 3.44441 12.8258 3.4341 13.3623 3.53679Z" fill="#F7F9FC"/>
+              </svg>
+              <span class="text-[10px] font-medium mt-1">EFFORT</span>
+              <span class="text-[10px] font-bold leading-tight text-center">Easy -<br>Moderate</span>
+            </div>
+          </div>
+        </div>
+        <div class="md:w-1/2">
+          <h3 class="text-2xl font-normal mb-4" style="font-family: 'Chase Regular', sans-serif;">
+            Walter's Water Walk
+          </h3>
+          <p class="text-base mb-2" style="font-family: 'Noto Sans', sans-serif; font-weight: 300;">
+            <strong>Area:</strong> Barnes to Kew via the Thames River
+          </p>
+          <p class="text-base mb-2" style="font-family: 'Noto Sans', sans-serif; font-weight: 300;">
+            <strong>Boxes:</strong> Walter and Wendy
+          </p>
+          <p class="text-base mb-2" style="font-family: 'Noto Sans', sans-serif; font-weight: 300;">
+            <strong>Themes:</strong> Water and wetlands
+          </p>
+        </div>
+      </div>
+
+      <!-- Walk 5: Ralph's Big Sustainability walk (Image Left, Text Right) -->
+      <div class="fade-in-section flex flex-col md:flex-row gap-8 mb-24 items-center">
+        <div class="md:w-1/2 relative">
+          <img
+            src="/assets/img/maps/Ralf.png"
+            alt="Ralph's Big Sustainability walk map"
+            class="walk-map rounded-2xl shadow-[0_20px_60px_rgba(177,24,35,0.4)]"
+          />
+          <!-- Overlay Badges - Left Aligned -->
+          <div class="absolute bottom-4 left-4 flex gap-3">
+            <div class="flex flex-col items-center justify-center w-20 h-20 rounded-xl" style="background-color: #B11823; font-family: 'Noto Sans', sans-serif;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V12C11 12.2652 11.1054 12.5196 11.2929 12.7071L14.2929 15.7071C14.6834 16.0976 15.3166 16.0976 15.7071 15.7071C16.0976 15.3166 16.0976 14.6834 15.7071 14.2929L13 11.5858V7Z" fill="#F7F9FC"/>
+              </svg>
+              <span class="text-[10px] font-medium mt-1">TIME</span>
+              <span class="text-xs font-bold">2h 25m</span>
+            </div>
+            <div class="flex flex-col items-center justify-center w-20 h-20 rounded-xl" style="background-color: #B11823; font-family: 'Noto Sans', sans-serif;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M9 5C9 6.65685 7.65685 8 6 8C4.34315 8 3 6.65685 3 5C3 3.34315 4.34315 2 6 2C7.65685 2 9 3.34315 9 5ZM10 5C10 4.44772 10.4477 4 11 4H15.5C17.9853 4 20 6.01472 20 8.5C20 10.9853 17.9853 13 15.5 13H8.5C7.11929 13 6 14.1193 6 15.5C6 16.8807 7.11929 18 8.5 18H13C13.5523 18 14 18.4477 14 19C14 19.5523 13.5523 20 13 20H8.5C6.01472 20 4 17.9853 4 15.5C4 13.0147 6.01472 11 8.5 11H15.5C16.8807 11 18 9.88071 18 8.5C18 7.11929 16.8807 6 15.5 6H11C10.4477 6 10 5.55228 10 5ZM18 22C19.6569 22 21 20.6569 21 19C21 17.3431 19.6569 16 18 16C16.3431 16 15 17.3431 15 19C15 20.6569 16.3431 22 18 22Z" fill="#F7F9FC"/>
+              </svg>
+              <span class="text-[10px] font-medium mt-1">DISTANCE</span>
+              <span class="text-xs font-bold">9.36km</span>
+            </div>
+            <div class="flex flex-col items-center justify-center w-20 h-20 rounded-xl" style="background-color: #B11823; font-family: 'Noto Sans', sans-serif;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.3623 3.53679C13.8464 3.62944 14.5533 3.87105 14.8944 4.55322C15.6414 6.04733 15.0248 7.46721 14.3624 8.3504C13.9304 8.92648 13.374 9.46853 12.7268 9.80043C12.5916 9.86978 12.3162 10.0005 11.9999 10.0005C11.4087 10.0004 10.8298 9.73147 10.3552 9.39565C10.2652 9.70153 10.1785 10.0376 10.1035 10.3939C9.96183 11.067 9.86895 11.7791 9.86389 12.4717C10.9163 12.1314 11.9928 12.1675 12.9214 12.6919C13.5558 12.185 14.3796 11.7535 15.2776 11.5181C16.5789 11.177 18.1385 11.2242 19.5546 12.1683C20.5704 12.8454 21.339 14.1209 21.4939 15.515C21.6555 16.9692 21.1512 18.56 19.6247 19.7812C18.5464 20.6438 16.9025 20.9764 15.3905 21.0977C13.8257 21.2232 12.1728 21.1369 10.8895 20.9943C8.51201 20.7301 6.6865 20.0666 5.41063 19.3814C4.57281 18.9314 3.42836 18.31 3.06534 17.3561C2.81963 16.7105 2.88378 15.9273 2.94403 15.2549C3.02305 14.373 3.21968 13.273 3.58656 12.0812C4.31865 9.70291 5.75154 6.88781 8.36288 4.72957C9.16636 4.06551 10.5103 3.65376 11.6348 3.51569C12.2154 3.44441 12.8258 3.4341 13.3623 3.53679Z" fill="#F7F9FC"/>
+              </svg>
+              <span class="text-[10px] font-medium mt-1">EFFORT</span>
+              <span class="text-xs font-bold">Moderate</span>
+            </div>
+          </div>
+        </div>
+        <div class="md:w-1/2">
+          <h3 class="text-2xl font-normal mb-4" style="font-family: 'Chase Regular', sans-serif;">
+            Ralph's Big Sustainability Walk
+          </h3>
+          <p class="text-base mb-2" style="font-family: 'Noto Sans', sans-serif; font-weight: 300;">
+            <strong>Area:</strong> Kew to Twickenham
+          </p>
+          <p class="text-base mb-2" style="font-family: 'Noto Sans', sans-serif; font-weight: 300;">
+            <strong>Boxes:</strong> Walter, Bertie, Ted, Ralph and Cara
+          </p>
+          <p class="text-base mb-2" style="font-family: 'Noto Sans', sans-serif; font-weight: 300;">
+            <strong>Themes:</strong> Water, biodiversity, climate hope, resource circularity and climate change
+          </p>
+        </div>
+      </div>
+
+      <!-- Walk 6: Bertie's Biodiversity walk (Image Right, Text Left) -->
+      <div class="fade-in-section flex flex-col md:flex-row-reverse gap-8 mb-24 items-center">
+        <div class="md:w-1/2 relative">
+          <img
+            src="/assets/img/maps/Berty.png"
+            alt="Bertie's Biodiversity walk map"
+            class="walk-map rounded-2xl shadow-[0_20px_60px_rgba(177,24,35,0.4)]"
+          />
+          <!-- Overlay Badges - Right Aligned -->
+          <div class="absolute bottom-4 right-4 flex gap-3">
+            <div class="flex flex-col items-center justify-center w-20 h-20 rounded-xl" style="background-color: #B11823; font-family: 'Noto Sans', sans-serif;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V12C11 12.2652 11.1054 12.5196 11.2929 12.7071L14.2929 15.7071C14.6834 16.0976 15.3166 16.0976 15.7071 15.7071C16.0976 15.3166 16.0976 14.6834 15.7071 14.2929L13 11.5858V7Z" fill="#F7F9FC"/>
+              </svg>
+              <span class="text-[10px] font-medium mt-1">TIME</span>
+              <span class="text-xs font-bold">1h 35m</span>
+            </div>
+            <div class="flex flex-col items-center justify-center w-20 h-20 rounded-xl" style="background-color: #B11823; font-family: 'Noto Sans', sans-serif;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M9 5C9 6.65685 7.65685 8 6 8C4.34315 8 3 6.65685 3 5C3 3.34315 4.34315 2 6 2C7.65685 2 9 3.34315 9 5ZM10 5C10 4.44772 10.4477 4 11 4H15.5C17.9853 4 20 6.01472 20 8.5C20 10.9853 17.9853 13 15.5 13H8.5C7.11929 13 6 14.1193 6 15.5C6 16.8807 7.11929 18 8.5 18H13C13.5523 18 14 18.4477 14 19C14 19.5523 13.5523 20 13 20H8.5C6.01472 20 4 17.9853 4 15.5C4 13.0147 6.01472 11 8.5 11H15.5C16.8807 11 18 9.88071 18 8.5C18 7.11929 16.8807 6 15.5 6H11C10.4477 6 10 5.55228 10 5ZM18 22C19.6569 22 21 20.6569 21 19C21 17.3431 19.6569 16 18 16C16.3431 16 15 17.3431 15 19C15 20.6569 16.3431 22 18 22Z" fill="#F7F9FC"/>
+              </svg>
+              <span class="text-[10px] font-medium mt-1">DISTANCE</span>
+              <span class="text-xs font-bold">5.97km</span>
+            </div>
+            <div class="flex flex-col items-center justify-center w-20 h-20 rounded-xl" style="background-color: #B11823; font-family: 'Noto Sans', sans-serif;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.3623 3.53679C13.8464 3.62944 14.5533 3.87105 14.8944 4.55322C15.6414 6.04733 15.0248 7.46721 14.3624 8.3504C13.9304 8.92648 13.374 9.46853 12.7268 9.80043C12.5916 9.86978 12.3162 10.0005 11.9999 10.0005C11.4087 10.0004 10.8298 9.73147 10.3552 9.39565C10.2652 9.70153 10.1785 10.0376 10.1035 10.3939C9.96183 11.067 9.86895 11.7791 9.86389 12.4717C10.9163 12.1314 11.9928 12.1675 12.9214 12.6919C13.5558 12.185 14.3796 11.7535 15.2776 11.5181C16.5789 11.177 18.1385 11.2242 19.5546 12.1683C20.5704 12.8454 21.339 14.1209 21.4939 15.515C21.6555 16.9692 21.1512 18.56 19.6247 19.7812C18.5464 20.6438 16.9025 20.9764 15.3905 21.0977C13.8257 21.2232 12.1728 21.1369 10.8895 20.9943C8.51201 20.7301 6.6865 20.0666 5.41063 19.3814C4.57281 18.9314 3.42836 18.31 3.06534 17.3561C2.81963 16.7105 2.88378 15.9273 2.94403 15.2549C3.02305 14.373 3.21968 13.273 3.58656 12.0812C4.31865 9.70291 5.75154 6.88781 8.36288 4.72957C9.16636 4.06551 10.5103 3.65376 11.6348 3.51569C12.2154 3.44441 12.8258 3.4341 13.3623 3.53679Z" fill="#F7F9FC"/>
+              </svg>
+              <span class="text-[10px] font-medium mt-1">EFFORT</span>
+              <span class="text-[10px] font-bold leading-tight text-center">Easy -<br>Moderate</span>
+            </div>
+          </div>
+        </div>
+        <div class="md:w-1/2">
+          <h3 class="text-2xl font-normal mb-4" style="font-family: 'Chase Regular', sans-serif;">
+            Bertie's Biodiversity Walk
+          </h3>
+          <p class="text-base mb-2" style="font-family: 'Noto Sans', sans-serif; font-weight: 300;">
+            <strong>Area:</strong> Kew to Richmond
+          </p>
+          <p class="text-base mb-2" style="font-family: 'Noto Sans', sans-serif; font-weight: 300;">
+            <strong>Boxes:</strong> Walter, Bertie, Ted, Freddy and Tilly
+          </p>
+          <p class="text-base mb-2" style="font-family: 'Noto Sans', sans-serif; font-weight: 300;">
+            <strong>Themes:</strong> Water, biodiversity, climate hope, fungi and trees
+          </p>
+        </div>
+      </div>
+
+      <!-- Walk 7: Tilly's Ultra Big Biodiversity walk (Image Left, Text Right) -->
+      <div class="fade-in-section flex flex-col md:flex-row gap-8 mb-24 items-center">
+        <div class="md:w-1/2 relative">
+          <img
+            src="/assets/img/maps/Tilly.png"
+            alt="Tilly's Ultra Big Biodiversity walk map"
+            class="walk-map rounded-2xl shadow-[0_20px_60px_rgba(177,24,35,0.4)]"
+          />
+          <!-- Overlay Badges - Left Aligned -->
+          <div class="absolute bottom-4 left-4 flex gap-3">
+            <div class="flex flex-col items-center justify-center w-20 h-20 rounded-xl" style="background-color: #B11823; font-family: 'Noto Sans', sans-serif;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V12C11 12.2652 11.1054 12.5196 11.2929 12.7071L14.2929 15.7071C14.6834 16.0976 15.3166 16.0976 15.7071 15.7071C16.0976 15.3166 16.0976 14.6834 15.7071 14.2929L13 11.5858V7Z" fill="#F7F9FC"/>
+              </svg>
+              <span class="text-[10px] font-medium mt-1">TIME</span>
+              <span class="text-xs font-bold">3h 35m</span>
+            </div>
+            <div class="flex flex-col items-center justify-center w-20 h-20 rounded-xl" style="background-color: #B11823; font-family: 'Noto Sans', sans-serif;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M9 5C9 6.65685 7.65685 8 6 8C4.34315 8 3 6.65685 3 5C3 3.34315 4.34315 2 6 2C7.65685 2 9 3.34315 9 5ZM10 5C10 4.44772 10.4477 4 11 4H15.5C17.9853 4 20 6.01472 20 8.5C20 10.9853 17.9853 13 15.5 13H8.5C7.11929 13 6 14.1193 6 15.5C6 16.8807 7.11929 18 8.5 18H13C13.5523 18 14 18.4477 14 19C14 19.5523 13.5523 20 13 20H8.5C6.01472 20 4 17.9853 4 15.5C4 13.0147 6.01472 11 8.5 11H15.5C16.8807 11 18 9.88071 18 8.5C18 7.11929 16.8807 6 15.5 6H11C10.4477 6 10 5.55228 10 5ZM18 22C19.6569 22 21 20.6569 21 19C21 17.3431 19.6569 16 18 16C16.3431 16 15 17.3431 15 19C15 20.6569 16.3431 22 18 22Z" fill="#F7F9FC"/>
+              </svg>
+              <span class="text-[10px] font-medium mt-1">DISTANCE</span>
+              <span class="text-xs font-bold">13.72km</span>
+            </div>
+            <div class="flex flex-col items-center justify-center w-20 h-20 rounded-xl" style="background-color: #B11823; font-family: 'Noto Sans', sans-serif;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.3623 3.53679C13.8464 3.62944 14.5533 3.87105 14.8944 4.55322C15.6414 6.04733 15.0248 7.46721 14.3624 8.3504C13.9304 8.92648 13.374 9.46853 12.7268 9.80043C12.5916 9.86978 12.3162 10.0005 11.9999 10.0005C11.4087 10.0004 10.8298 9.73147 10.3552 9.39565C10.2652 9.70153 10.1785 10.0376 10.1035 10.3939C9.96183 11.067 9.86895 11.7791 9.86389 12.4717C10.9163 12.1314 11.9928 12.1675 12.9214 12.6919C13.5558 12.185 14.3796 11.7535 15.2776 11.5181C16.5789 11.177 18.1385 11.2242 19.5546 12.1683C20.5704 12.8454 21.339 14.1209 21.4939 15.515C21.6555 16.9692 21.1512 18.56 19.6247 19.7812C18.5464 20.6438 16.9025 20.9764 15.3905 21.0977C13.8257 21.2232 12.1728 21.1369 10.8895 20.9943C8.51201 20.7301 6.6865 20.0666 5.41063 19.3814C4.57281 18.9314 3.42836 18.31 3.06534 17.3561C2.81963 16.7105 2.88378 15.9273 2.94403 15.2549C3.02305 14.373 3.21968 13.273 3.58656 12.0812C4.31865 9.70291 5.75154 6.88781 8.36288 4.72957C9.16636 4.06551 10.5103 3.65376 11.6348 3.51569C12.2154 3.44441 12.8258 3.4341 13.3623 3.53679Z" fill="#F7F9FC"/>
+              </svg>
+              <span class="text-[10px] font-medium mt-1">EFFORT</span>
+              <span class="text-xs font-bold">Difficult</span>
+            </div>
+          </div>
+        </div>
+        <div class="md:w-1/2">
+          <h3 class="text-2xl font-normal mb-4" style="font-family: 'Chase Regular', sans-serif;">
+            Tilly's Ultra Big Biodiversity Walk
+          </h3>
+          <p class="text-base mb-2" style="font-family: 'Noto Sans', sans-serif; font-weight: 300;">
+            <strong>Area:</strong> Kew to Barnes via Richmond Park
+          </p>
+          <p class="text-base mb-2" style="font-family: 'Noto Sans', sans-serif; font-weight: 300;">
+            <strong>Boxes:</strong> Walter, Bertie, Ted, Freddy, Tilly and Wendy
+          </p>
+          <p class="text-base mb-2" style="font-family: 'Noto Sans', sans-serif; font-weight: 300;">
+            <strong>Themes:</strong> Water, biodiversity, climate hope, fungi, trees and wetlands
+          </p>
+        </div>
+      </div>
+
+      <!-- Walk 8: Wendy's Wetlands walk (Image Right, Text Left) -->
+      <div class="fade-in-section flex flex-col md:flex-row-reverse gap-8 mb-24 items-center">
+        <div class="md:w-1/2 relative">
+          <img
+            src="/assets/img/maps/Wendy.png"
+            alt="Wendy's Wetlands walk map"
+            class="walk-map rounded-2xl shadow-[0_20px_60px_rgba(177,24,35,0.4)]"
+          />
+          <!-- Overlay Badges - Right Aligned -->
+          <div class="absolute bottom-4 right-4 flex gap-3">
+            <div class="flex flex-col items-center justify-center w-20 h-20 rounded-xl" style="background-color: #B11823; font-family: 'Noto Sans', sans-serif;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V12C11 12.2652 11.1054 12.5196 11.2929 12.7071L14.2929 15.7071C14.6834 16.0976 15.3166 16.0976 15.7071 15.7071C16.0976 15.3166 16.0976 14.6834 15.7071 14.2929L13 11.5858V7Z" fill="#F7F9FC"/>
+              </svg>
+              <span class="text-[10px] font-medium mt-1">TIME</span>
+              <span class="text-xs font-bold">2h 15m</span>
+            </div>
+            <div class="flex flex-col items-center justify-center w-20 h-20 rounded-xl" style="background-color: #B11823; font-family: 'Noto Sans', sans-serif;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M9 5C9 6.65685 7.65685 8 6 8C4.34315 8 3 6.65685 3 5C3 3.34315 4.34315 2 6 2C7.65685 2 9 3.34315 9 5ZM10 5C10 4.44772 10.4477 4 11 4H15.5C17.9853 4 20 6.01472 20 8.5C20 10.9853 17.9853 13 15.5 13H8.5C7.11929 13 6 14.1193 6 15.5C6 16.8807 7.11929 18 8.5 18H13C13.5523 18 14 18.4477 14 19C14 19.5523 13.5523 20 13 20H8.5C6.01472 20 4 17.9853 4 15.5C4 13.0147 6.01472 11 8.5 11H15.5C16.8807 11 18 9.88071 18 8.5C18 7.11929 16.8807 6 15.5 6H11C10.4477 6 10 5.55228 10 5ZM18 22C19.6569 22 21 20.6569 21 19C21 17.3431 19.6569 16 18 16C16.3431 16 15 17.3431 15 19C15 20.6569 16.3431 22 18 22Z" fill="#F7F9FC"/>
+              </svg>
+              <span class="text-[10px] font-medium mt-1">DISTANCE</span>
+              <span class="text-xs font-bold">8.83km</span>
+            </div>
+            <div class="flex flex-col items-center justify-center w-20 h-20 rounded-xl" style="background-color: #B11823; font-family: 'Noto Sans', sans-serif;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.3623 3.53679C13.8464 3.62944 14.5533 3.87105 14.8944 4.55322C15.6414 6.04733 15.0248 7.46721 14.3624 8.3504C13.9304 8.92648 13.374 9.46853 12.7268 9.80043C12.5916 9.86978 12.3162 10.0005 11.9999 10.0005C11.4087 10.0004 10.8298 9.73147 10.3552 9.39565C10.2652 9.70153 10.1785 10.0376 10.1035 10.3939C9.96183 11.067 9.86895 11.7791 9.86389 12.4717C10.9163 12.1314 11.9928 12.1675 12.9214 12.6919C13.5558 12.185 14.3796 11.7535 15.2776 11.5181C16.5789 11.177 18.1385 11.2242 19.5546 12.1683C20.5704 12.8454 21.339 14.1209 21.4939 15.515C21.6555 16.9692 21.1512 18.56 19.6247 19.7812C18.5464 20.6438 16.9025 20.9764 15.3905 21.0977C13.8257 21.2232 12.1728 21.1369 10.8895 20.9943C8.51201 20.7301 6.6865 20.0666 5.41063 19.3814C4.57281 18.9314 3.42836 18.31 3.06534 17.3561C2.81963 16.7105 2.88378 15.9273 2.94403 15.2549C3.02305 14.373 3.21968 13.273 3.58656 12.0812C4.31865 9.70291 5.75154 6.88781 8.36288 4.72957C9.16636 4.06551 10.5103 3.65376 11.6348 3.51569C12.2154 3.44441 12.8258 3.4341 13.3623 3.53679Z" fill="#F7F9FC"/>
+              </svg>
+              <span class="text-[10px] font-medium mt-1">EFFORT</span>
+              <span class="text-xs font-bold">Moderate</span>
+            </div>
+          </div>
+        </div>
+        <div class="md:w-1/2">
+          <h3 class="text-2xl font-normal mb-4" style="font-family: 'Chase Regular', sans-serif;">
+            Wendy's Wetlands Walk
+          </h3>
+          <p class="text-base mb-2" style="font-family: 'Noto Sans', sans-serif; font-weight: 300;">
+            <strong>Area:</strong> Kew to Barnes via the Thames River
+          </p>
+          <p class="text-base mb-2" style="font-family: 'Noto Sans', sans-serif; font-weight: 300;">
+            <strong>Boxes:</strong> Walter and Wendy
+          </p>
+          <p class="text-base mb-2" style="font-family: 'Noto Sans', sans-serif; font-weight: 300;">
+            <strong>Themes:</strong> Water and wetlands
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Meet the Operator Section -->
+    <div class="fade-in-section mt-32 mb-24">
+      <h2 class="text-4xl font-normal mb-6 text-center" style="font-family: 'Chase Regular', sans-serif;">
+        Meet the Operator
+      </h2>
+      <p class="text-base text-center mb-10 max-w-3xl mx-auto leading-relaxed" style="font-family: 'Noto Sans', sans-serif; font-weight: 300;">
+        Box Walks is a registered charity on a mission to get the United Kingdom exploring and taking part in environmental action, while bringing our iconic red grade II listed phone boxes out of retirement and giving them a new purpose. We are launching our first walks in Richmond Upon Thames, with plans to expand the network as more people take part in our walks and complete environmental actions.
+      </p>
+      <div class="text-center">
+        <a routerLink="/about"
+           class="inline-block px-8 py-3 rounded-lg text-white text-base hover:opacity-90 transition-opacity"
+           style="background-color: #B11823; font-family: 'Noto Sans', sans-serif; font-weight: 400;">
+          Read More About Our Vision & Trustees
+        </a>
+      </div>
+    </div>
+
+  </section>
+</main>

@@ -1,0 +1,12 @@
+.trustee-photo {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .trustee-photo {
+    width: 180px;
+    height: 225px;
+  }
+}

@@ -1,0 +1,39 @@
+<!-- Header -->
+<header class="fixed md:relative top-0 left-0 right-0 z-50 px-4 py-3 sm:px-6 md:px-8 lg:px-12 bg-[#121317] border-b border-white/20 md:border-none">
+  <div class="flex items-center justify-between">
+    <!-- Logo and Brand Name -->
+    <a routerLink="/" class="flex items-center no-underline">
+      <img
+        src="/assets/img/logo.png"
+        alt="Box Walks Logo"
+        class="w-8 md:w-10 mr-2"
+        style="height: auto; object-fit: contain;"
+      />
+      <h1
+        class="text-white text-[24px] md:text-[30px] leading-none"
+        style="font-family: 'Chase Bold', sans-serif;"
+      >
+        Box Walks
+      </h1>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="flex flex-col items-end gap-1">
+      <a routerLink="/"
+         routerLinkActive="nav-active"
+         [routerLinkActiveOptions]="{ exact: true }"
+         class="nav-link text-white text-sm md:text-base hover:opacity-80 transition-opacity"
+         style="font-family: 'Chase Bold', sans-serif;">
+        Home
+      </a>
+      <a routerLink="/about"
+         routerLinkActive="nav-active"
+         class="nav-link text-white text-sm md:text-base hover:opacity-80 transition-opacity"
+         style="font-family: 'Chase Bold', sans-serif;">
+        About Us
+      </a>
+    </nav>
+  </div>
+</header>
+
+<router-outlet />
