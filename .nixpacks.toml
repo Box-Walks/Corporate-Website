@@ -1,0 +1,15 @@
+# Force Node 22.12+ to match Angular 21 requirements
+[phases.setup]
+nixPkgs = ["nodejs_22"]
+
+# Use npm install instead of npm ci to avoid platform-specific lockfile issues
+[phases.install]
+cmds = ["npm install --production=false"]
+
+# Build phase (this is default but being explicit)
+[phases.build]
+cmds = ["npm run build"]
+
+# Start command (this is default but being explicit)
+[start]
+cmd = "npm run start"
